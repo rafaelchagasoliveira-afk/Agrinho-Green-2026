@@ -82,3 +82,4 @@ function desativarLeituraCompleta(blocos) {
         bloco.removeEventListener('click', executarLeituraDoBloco);
     });
 }
+}
