@@ -66,7 +66,7 @@ header button {
 }
 
 /* =========================================================
-   BANNER CENTRAL
+   BANNER CENTRAL (CORRIGIDO)
    ========================================================= */
 .banner-central {
     display: flex;
@@ -74,7 +74,8 @@ header button {
     align-items: center;
     text-align: center;
     height: calc(100vh - 74px); 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/agro.jpg');
+    /* CORRIGIDO: Removido o ../ para encontrar a pasta assets na raiz */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('assets/agro.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -218,7 +219,7 @@ header button {
 }
 
 /* =========================================================
-   SEÇÃO FINAL: IMPACTO FINAL CORRIGIDO (TÍTULO CENTRAL E FOTO GIGANTE)
+   SEÇÃO FINAL: IMPACTO FINAL CORRIGIDO
    ========================================================= */
 .secao-final-impacto {
     padding: 6rem 2rem;
@@ -229,18 +230,18 @@ header button {
 }
 
 .conteudo-impacto { 
-    max-width: 1200px; /* Aumentado para dar espaço para a foto gigante */
+    max-width: 1200px; 
     width: 100%;
     margin: 0 auto; 
-    text-align: center; /* Centraliza tudo dentro deste bloco */
+    text-align: center; 
 }
 
 .secao-final-impacto h2 {
-    font-size: 3.5rem; /* Título bem grande e imponente */
+    font-size: 3.5rem; 
     color: var(--verde-escuro);
     margin-bottom: 2rem;
     font-weight: bold;
-    text-align: center; /* TÍTULO CENTRALIZADO COMO VOCÊ PEDIU */
+    text-align: center; 
 }
 
 .secao-final-impacto p {
@@ -248,7 +249,7 @@ header button {
     line-height: 1.8;
     color: #333;
     max-width: 900px;
-    margin: 0 auto 4rem auto; /* Centraliza o texto e joga espaçamento para a foto */
+    margin: 0 auto 4rem auto; 
     text-align: center;
 }
 
@@ -260,9 +261,9 @@ header button {
 
 .img-final {
     width: 100%;
-    max-width: 1200px; /* FOTO BEM GRANDE */
-    height: 600px; /* Foto alta e cinematográfica */
-    object-fit: cover; /* Faz o corte inteligente sem esticar o pôr do sol */
+    max-width: 1200px; 
+    height: 600px; 
+    object-fit: cover; 
     border-radius: 24px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
 }
@@ -359,7 +360,7 @@ footer {
         font-size: 2.5rem; 
     }
     .img-final { 
-        height: 350px; /* No celular a foto diminui proporcionalmente para caber na tela */
+        height: 350px; 
     }
 }
 
