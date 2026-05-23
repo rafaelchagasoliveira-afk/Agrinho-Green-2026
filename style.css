@@ -1,0 +1,371 @@
+/* =========================================================
+   VARIÁVEIS E REGRAS GLOBAIS
+   ========================================================= */
+:root {
+    --verde: #2e8b57;
+    --verde-escuro: #1f5c3f;
+    --branco: #ffffff;
+    --preto: #111111;
+    --fonte: Arial, sans-serif;
+}
+
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    font-size: 100%; 
+    scroll-behavior: smooth; 
+}
+
+body {
+    background-color: #dfe9d9;
+    font-family: var(--fonte);
+    color: var(--preto);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   HEADER (MENU FIXO)
+   ========================================================= */
+header {
+    background-color: var(--verde);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+nav { 
+    display: flex; 
+    gap: 1.5rem; 
+}
+
+nav a { 
+    color: white; 
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+header button { 
+    background-color: white; 
+    color: var(--verde); 
+    border: none; 
+    padding: 0.8rem 1.2rem; 
+    border-radius: 10px; 
+    cursor: pointer; 
+    font-weight: bold; 
+}
+
+/* =========================================================
+   BANNER CENTRAL
+   ========================================================= */
+.banner-central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 74px); 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/agro.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.textos-banner h1 { 
+    font-size: 3.5rem; 
+    color: #ffffff; 
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.9); 
+    margin-bottom: 1rem; 
+}
+
+.textos-banner p { 
+    font-size: 1.4rem; 
+    color: #ffffff; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.9); 
+}
+
+/* =========================================================
+   CARDS DE DESTAQUE RÁPIDO
+   ========================================================= */
+.secao-destaques {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1360px;
+    margin: 4rem auto 0 auto;
+    padding: 0 2rem;
+}
+
+.card-destaque { 
+    flex: 1; 
+    padding: 2rem; 
+    text-align: center; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+    background: white; 
+}
+
+.icone-card { 
+    font-size: 2.5rem; 
+    display: block; 
+    margin-bottom: 0.5rem; 
+}
+
+.card-destaque h3 { 
+    color: var(--verde-escuro); 
+    margin-bottom: 0.5rem; 
+    font-size: 1.5rem; 
+}
+
+/* =========================================================
+   BLOCO DO MANIFESTO
+   ========================================================= */
+.bloco-manifesto { 
+    background-color: var(--verde-escuro); 
+    color: white; 
+    padding: 4rem 2rem; 
+    text-align: center; 
+    margin-top: 4rem; 
+}
+
+.conteudo-manifesto { 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
+.bloco-manifesto h2 { 
+    font-size: 2.5rem; 
+    margin-bottom: 1rem; 
+}
+
+.bloco-manifesto p { 
+    font-size: 1.2rem; 
+    line-height: 1.8; 
+}
+
+/* =========================================================
+   GRID DE CONTEÚDO INFERIOR (8 BLOCOS)
+   ========================================================= */
+.conteudo-inferior {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: stretch; 
+    gap: 2.5rem;
+    padding: 4rem 2rem;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.cartao-info {
+    background-color: var(--branco);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 380px; 
+    max-width: 410px;
+}
+
+.cartao-info h2 { 
+    font-size: 1.8rem; 
+    color: var(--verde-escuro); 
+    margin-bottom: 1.5rem; 
+    text-align: center; 
+}
+
+.cartao-info p { 
+    font-size: 1.1rem; 
+    line-height: 1.65; 
+    text-align: left; 
+    margin-bottom: 1.2rem; 
+}
+
+.espaco-imagem { 
+    margin-top: auto; 
+    padding-top: 1.5rem; 
+    display: flex; 
+    justify-content: center; 
+}
+
+.img-conteudo { 
+    width: 100%; 
+    height: 240px; 
+    object-fit: cover; 
+    border-radius: 12px; 
+}
+
+/* Destaque para as duas primeiras caixas grandes (Agro) */
+.cartao-info:nth-child(1), 
+.cartao-info:nth-child(2) { 
+    flex: 1 1 100%; 
+    max-width: 100%; 
+}
+
+.cartao-info:nth-child(1) .img-conteudo, 
+.cartao-info:nth-child(2) .img-conteudo { 
+    height: auto; 
+    max-width: 680px; 
+}
+
+/* =========================================================
+   SEÇÃO FINAL: IMPACTO FINAL CORRIGIDO (TÍTULO CENTRAL E FOTO GIGANTE)
+   ========================================================= */
+.secao-final-impacto {
+    padding: 6rem 2rem;
+    background: linear-gradient(to bottom, #dfe9d9, #1f5c3f);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.conteudo-impacto { 
+    max-width: 1200px; /* Aumentado para dar espaço para a foto gigante */
+    width: 100%;
+    margin: 0 auto; 
+    text-align: center; /* Centraliza tudo dentro deste bloco */
+}
+
+.secao-final-impacto h2 {
+    font-size: 3.5rem; /* Título bem grande e imponente */
+    color: var(--verde-escuro);
+    margin-bottom: 2rem;
+    font-weight: bold;
+    text-align: center; /* TÍTULO CENTRALIZADO COMO VOCÊ PEDIU */
+}
+
+.secao-final-impacto p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto 4rem auto; /* Centraliza o texto e joga espaçamento para a foto */
+    text-align: center;
+}
+
+.espaco-imagem-final {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.img-final {
+    width: 100%;
+    max-width: 1200px; /* FOTO BEM GRANDE */
+    height: 600px; /* Foto alta e cinematográfica */
+    object-fit: cover; /* Faz o corte inteligente sem esticar o pôr do sol */
+    border-radius: 24px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================================================
+   RODAPÉ
+   ========================================================= */
+footer { 
+    background-color: #1a3322; 
+    color: #e2ede4; 
+    padding: 3rem 2rem; 
+    margin-top: auto; 
+    width: 100%;
+}
+
+.conteudo-rodape { 
+    display: flex; 
+    justify-content: space-between; 
+    max-width: 1360px; 
+    margin: 0 auto; 
+    gap: 4rem; 
+}
+
+.linha-rodape { 
+    border: 0; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    margin: 2rem 0; 
+}
+
+.credito-final { 
+    text-align: center; 
+}
+
+/* =========================================================
+   ACESSIBILIDADE
+   ========================================================= */
+.acessibilidade { 
+    position: fixed; 
+    top: 90px; 
+    right: 20px; 
+    z-index: 2000; 
+    background: white; 
+    padding: 1.5rem; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2); 
+    border: 2px solid var(--verde); 
+    width: 280px; 
+}
+
+.secao-escondida { 
+    display: none !important; 
+}
+
+.botoes-acessibilidade { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 0.7rem; 
+}
+
+.botoes-acessibilidade button { 
+    background: var(--verde); 
+    color: white; 
+    padding: 0.6rem; 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer; 
+}
+
+/* =========================================================
+   MODO ESCURO E ACESSIBILIDADE VISUAL
+   ========================================================= */
+.dark-mode { background-color: #111; color: white; }
+.dark-mode header { background-color: #0d0d0d; }
+.dark-mode .secao-final-impacto h2 { color: #4cd18d; }
+.dark-mode .secao-final-impacto p { color: #eee; }
+.dark-mode .cartao-info { background: #1c1c1c; color: #eee; }
+.dark-mode .cartao-info h2 { color: #4cd18d; }
+.dark-mode .card-destaque { background: #1c1c1c; color: #eee; }
+.foco-leitura { outline: 2px dashed var(--verde); outline-offset: 4px; cursor: pointer; }
+
+/* =========================================================
+   RESPONSIVIDADE (MOBILE-FRIENDLY)
+   ========================================================= */
+@media (max-width: 1024px) {
+    .conteudo-inferior, .secao-destaques, .conteudo-rodape { 
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .cartao-info { 
+        max-width: 100%; 
+        width: 100%; 
+    }
+    .secao-final-impacto h2 { 
+        font-size: 2.5rem; 
+    }
+    .img-final { 
+        height: 350px; /* No celular a foto diminui proporcionalmente para caber na tela */
+    }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 1rem; text-align: center; }
+    .banner-central h1 { font-size: 2.2rem; }
+    .banner-central p { font-size: 1.1rem; }
+    .bloco-manifesto h2 { font-size: 1.8rem; }
+}
