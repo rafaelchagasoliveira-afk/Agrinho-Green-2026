@@ -379,13 +379,14 @@ footer {
     .banner-central p { font-size: 1.1rem; }
     .bloco-manifesto h2 { font-size: 1.8rem; }
 }
-
 @media (max-width: 480px) {
     .acessibilidade {
         width: calc(100% - 40px);
         left: 20px;
         right: 20px;
-        top: auto;
-        bottom: 20px; 
+        bottom: auto; /* Solta o fundo */
+        top: 20%;     /* Empurra o painel para o meio/topo da tela */
+    }
+}
     }
 }
