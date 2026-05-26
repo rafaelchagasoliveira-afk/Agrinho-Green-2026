@@ -1,6 +1,7 @@
 const botaoDarkMode = document.getElementById('botao-dark');
 const linkAcessibilidade = document.getElementById('link-acessibilidade');
 const painelAcessibilidade = document.getElementById('acessibilidade');
+const btnFecharAcessibilidade = document.getElementById('fechar-acessibilidade');
 
 const btnAumentarFonte = document.getElementById('aumentar-fonte');
 const btnDiminuirFonte = document.getElementById('diminuir-fonte');
@@ -23,11 +24,19 @@ if (botaoDarkMode) {
     });
 }
 
-// 2. Lógica do Painel de Acessibilidade
+// 2. Lógica do Painel de Acessibilidade (Abrir/Fechar no link)
 if (linkAcessibilidade && painelAcessibilidade) {
     linkAcessibilidade.addEventListener('click', (evento) => {
         evento.preventDefault();
         painelAcessibilidade.classList.toggle('secao-escondida');
+    });
+}
+
+// Lógica dedicada para fechar o painel no botão X
+if (btnFecharAcessibilidade && painelAcessibilidade) {
+    btnFecharAcessibilidade.addEventListener('click', (evento) => {
+        evento.preventDefault();
+        painelAcessibilidade.classList.add('secao-escondida');
     });
 }
 
