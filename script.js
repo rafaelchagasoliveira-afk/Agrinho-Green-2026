@@ -65,7 +65,7 @@ if (btnAtivarLeitura) {
 
             blocosTexto.forEach(bloco => {
                 bloco.classList.add('foco-leitura');
-                bloco.addEventListener('click', executarLeituraDoBloco);
+                bloco.addEventListener('click', ejecutarLeituraDoBloco);
             });
         } else {
             desativarLeituraCompleta(blocosTexto);
@@ -73,7 +73,7 @@ if (btnAtivarLeitura) {
     });
 }
 
-function executarLeituraDoBloco(evento) {
+function ejecutarLeituraDoBloco(evento) {
     sinteseVoz.cancel(); 
     const textoParaLer = evento.currentTarget.textContent;
     const fala = new SpeechSynthesisUtterance(textoParaLer);
@@ -89,6 +89,6 @@ function desativarLeituraCompleta(blocos) {
 
     blocos.forEach(bloco => {
         bloco.classList.remove('foco-leitura');
-        bloco.removeEventListener('click', executarLeituraDoBloco);
+        bloco.removeEventListener('click', ejecutarLeituraDoBloco);
     });
 }
