@@ -7,6 +7,7 @@
     --branco: #ffffff;
     --preto: #111111;
     --fonte: Arial, sans-serif;
+    --verde-claro: #4cd18d;
 }
 
 * { 
@@ -17,7 +18,6 @@
 
 html { 
     font-size: 100%; 
-    scroll-behavior: smooth; 
 }
 
 body {
@@ -53,6 +53,11 @@ nav a {
     color: white; 
     text-decoration: none; 
     font-weight: bold; 
+    transition: opacity 0.3s ease;
+}
+
+nav a:hover {
+    opacity: 0.8;
 }
 
 header button { 
@@ -63,6 +68,11 @@ header button {
     border-radius: 10px; 
     cursor: pointer; 
     font-weight: bold; 
+    transition: transform 0.3s ease;
+}
+
+header button:hover {
+    transform: scale(1.05);
 }
 
 /* =========================================================
@@ -218,6 +228,397 @@ header button {
 }
 
 /* =========================================================
+   SEÇÃO DE JOGOS (NOVO!)
+   ========================================================= */
+.secao-jogos {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f0f8f0 0%, #e8f0e8 100%);
+    max-width: 1360px;
+    margin: 4rem auto;
+    width: 100%;
+}
+
+.titulo-jogos {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.titulo-jogos h2 {
+    font-size: 3rem;
+    color: var(--verde-escuro);
+    margin-bottom: 1rem;
+}
+
+.titulo-jogos p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Grid dos Cards de Jogos */
+.grid-jogos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+}
+
+.card-jogo {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.card-jogo:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(46, 139, 87, 0.2);
+    border-color: var(--verde);
+}
+
+.icone-jogo {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.card-jogo h3 {
+    font-size: 1.6rem;
+    color: var(--verde-escuro);
+    margin-bottom: 0.8rem;
+    text-align: center;
+}
+
+.card-jogo p {
+    font-size: 1rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.info-jogo {
+    display: flex;
+    justify-content: space-around;
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.info-jogo strong {
+    color: var(--verde);
+    font-weight: bold;
+}
+
+/* Botão dos Jogos */
+.btn-jogo {
+    background: linear-gradient(135deg, var(--verde), var(--verde-claro));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.btn-jogo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.3);
+}
+
+.btn-jogo:active {
+    transform: scale(0.98);
+}
+
+/* Container para conteúdo dos jogos */
+.container-jogo-conteudo {
+    display: none;
+}
+
+.container-jogo-conteudo:not(:empty) {
+    display: block;
+    padding-top: 1rem;
+}
+
+/* =========================================================
+   QUIZ AGRINHO RÁPIDO
+   ========================================================= */
+.pergunta-quiz {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--verde);
+}
+
+.pergunta-quiz h3 {
+    font-size: 1.1rem;
+    color: var(--verde-escuro);
+    margin-bottom: 1rem;
+}
+
+.opcoes-quiz {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.opcao-quiz {
+    background: white;
+    border: 2px solid #ddd;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.opcao-quiz:hover {
+    border-color: var(--verde);
+    background: #f0f8f0;
+}
+
+.opcao-quiz:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.dica-quiz {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    background: #fffacd;
+    border-radius: 8px;
+    color: #333;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-finalizar-quiz {
+    background: var(--verde-escuro);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.btn-finalizar-quiz:hover {
+    background: var(--verde);
+}
+
+/* =========================================================
+   MEMÓRIA SUSTENTÁVEL
+   ========================================================= */
+.grid-memoria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.carta-memoria {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, var(--verde), var(--verde-claro));
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-weight: bold;
+    user-select: none;
+}
+
+.carta-memoria:hover:not(.flipped) {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(46, 139, 87, 0.3);
+}
+
+.carta-memoria.flipped {
+    background: white;
+    color: var(--verde-escuro);
+    border-color: var(--verde);
+}
+
+.pontuacao-memoria {
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--verde-escuro);
+    font-weight: bold;
+    padding: 1rem;
+    background: #f0f8f0;
+    border-radius: 10px;
+}
+
+/* =========================================================
+   CLICKER DA PRODUÇÃO
+   ========================================================= */
+.area-clicker {
+    text-align: center;
+    padding: 2rem;
+}
+
+.area-clicker h2 {
+    color: var(--verde-escuro);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.tempo-clicker,
+.clicks-clicker {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.tempo-clicker strong,
+.clicks-clicker strong {
+    color: var(--verde);
+    font-size: 1.5rem;
+}
+
+.btn-campo {
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: white;
+    border: none;
+    padding: 2rem 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 1.5rem 0;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.3);
+}
+
+.btn-campo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+}
+
+.btn-campo:active {
+    transform: scale(0.95);
+}
+
+/* =========================================================
+   RESULTADO DO JOGO
+   ========================================================= */
+.resultado-jogo {
+    text-align: center;
+    padding: 2rem;
+    background: #f0f8f0;
+    border-radius: 12px;
+    border: 2px solid var(--verde);
+}
+
+.resultado-jogo h2 {
+    color: var(--verde-escuro);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.pontuacao-final {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.pontuacao-final strong {
+    color: var(--verde);
+    font-size: 1.8rem;
+}
+
+.melhor-score {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+.melhor-score strong {
+    color: var(--verde);
+}
+
+.btn-jogar-novamente {
+    background: var(--verde);
+    color: white;
+    border: none;
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-jogar-novamente:hover {
+    background: var(--verde-escuro);
+    transform: scale(1.05);
+}
+
+/* =========================================================
+   RANKING DOS JOGOS
+   ========================================================= */
+.ranking-jogos {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin: 3rem auto 0 auto;
+}
+
+.ranking-jogos h3 {
+    font-size: 1.5rem;
+    color: var(--verde-escuro);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.tabela-ranking {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.linha-ranking {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+    border-left: 4px solid var(--verde);
+    font-size: 1.1rem;
+}
+
+.linha-ranking span {
+    color: #555;
+}
+
+.linha-ranking strong {
+    color: var(--verde);
+    font-weight: bold;
+}
+
+/* =========================================================
    SEÇÃO FINAL: IMPACTO FINAL
    ========================================================= */
 .secao-final-impacto {
@@ -314,6 +715,24 @@ footer {
     overflow-y: auto;  
 }
 
+.dark-mode .acessibilidade {
+    background: #1c1c1c;
+    color: #eee;
+    border-color: var(--verde-claro);
+}
+
+.dark-mode .acessibilidade h2 {
+    color: var(--verde-claro);
+}
+
+.dark-mode .acessibilidade p {
+    color: #ccc;
+}
+
+.dark-mode #porcentagem-fonte {
+    color: var(--verde-claro) !important;
+}
+
 .secao-escondida { 
     display: none !important; 
 }
@@ -336,38 +755,133 @@ footer {
 /* =========================================================
    MODO ESCURO E ACESSIBILIDADE VISUAL
    ========================================================= */
-.dark-mode { background-color: #111; color: white; }
-.dark-mode header { background-color: #0d0d0d; }
-.dark-mode .secao-final-impacto { background: linear-gradient(to bottom, #1c1c1c, #0d0d0d); }
-.dark-mode .secao-final-impacto h2 { color: #4cd18d; }
-.dark-mode .secao-final-impacto p { color: #eee; }
-.dark-mode .cartao-info { background: #1c1c1c; color: #eee; }
-.dark-mode .cartao-info h2 { color: #4cd18d; }
-.dark-mode .card-destaque { background: #1c1c1c; color: #eee; }
-.foco-leitura { outline: 2px dashed var(--verde); outline-offset: 4px; cursor: pointer; }
+.dark-mode { 
+    background-color: #111; 
+    color: white; 
+}
+
+.dark-mode header { 
+    background-color: #0d0d0d; 
+}
+
+.dark-mode .secao-jogos {
+    background: linear-gradient(135deg, #1c1c1c 0%, #0d0d0d 100%);
+}
+
+.dark-mode .card-jogo {
+    background: #1c1c1c;
+    color: #eee;
+}
+
+.dark-mode .card-jogo h3 {
+    color: var(--verde-claro);
+}
+
+.dark-mode .info-jogo {
+    background: #2a2a2a;
+    color: #ccc;
+}
+
+.dark-mode .pergunta-quiz,
+.dark-mode .resultado-jogo {
+    background: #1c1c1c;
+    color: #eee;
+    border-color: var(--verde-claro);
+}
+
+.dark-mode .opcao-quiz {
+    background: #2a2a2a;
+    border-color: #444;
+    color: #eee;
+}
+
+.dark-mode .ranking-jogos {
+    background: #1c1c1c;
+    border: 2px solid var(--verde);
+}
+
+.dark-mode .ranking-jogos h3,
+.dark-mode .titulo-jogos h2 {
+    color: var(--verde-claro);
+}
+
+.dark-mode .linha-ranking {
+    background: #2a2a2a;
+    color: #eee;
+}
+
+.dark-mode .secao-final-impacto { 
+    background: linear-gradient(to bottom, #1c1c1c, #0d0d0d); 
+}
+
+.dark-mode .secao-final-impacto h2 { 
+    color: var(--verde-claro);
+}
+
+.dark-mode .secao-final-impacto p { 
+    color: #ccc; 
+}
+
+.dark-mode .cartao-info { 
+    background: #1c1c1c; 
+    color: #eee; 
+}
+
+.dark-mode .cartao-info h2 { 
+    color: var(--verde-claro);
+}
+
+.dark-mode .card-destaque { 
+    background: #1c1c1c; 
+    color: #eee; 
+}
+
+.foco-leitura { 
+    outline: 2px dashed var(--verde); 
+    outline-offset: 4px; 
+    cursor: pointer; 
+}
 
 /* =========================================================
    RESPONSIVIDADE (MOBILE-FRIENDLY)
    ========================================================= */
 @media (max-width: 1024px) {
-    .conteudo-inferior, .secao-destaques, .conteudo-rodape { 
+    .conteudo-inferior, 
+    .secao-destaques, 
+    .conteudo-rodape { 
         flex-direction: column; 
         align-items: center; 
     }
+    
     .cartao-info { 
         max-width: 100%; 
         width: 100%; 
     }
+    
     .secao-final-impacto h2 { 
         font-size: 2.5rem; 
     }
+    
     .img-final { 
         height: 350px; 
+    }
+    
+    .grid-jogos {
+        grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    header { flex-direction: column; gap: 1rem; text-align: center; }
+    header { 
+        flex-direction: column; 
+        gap: 1rem; 
+        text-align: center; 
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
     
     .banner-central { 
         height: auto; 
@@ -375,18 +889,67 @@ footer {
         padding: 4rem 1rem; 
     }
     
-    .banner-central h1 { font-size: 2.2rem; }
-    .banner-central p { font-size: 1.1rem; }
-    .bloco-manifesto h2 { font-size: 1.8rem; }
+    .banner-central h1 { 
+        font-size: 2.2rem; 
+    }
+    
+    .banner-central p { 
+        font-size: 1.1rem; 
+    }
+    
+    .bloco-manifesto h2 { 
+        font-size: 1.8rem; 
+    }
+    
+    .secao-jogos {
+        padding: 3rem 1rem;
+        margin: 2rem 1rem;
+    }
+    
+    .titulo-jogos h2 {
+        font-size: 2rem;
+    }
+    
+    .grid-memoria {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
+
 @media (max-width: 480px) {
     .acessibilidade {
         width: calc(100% - 40px);
         left: 20px;
         right: 20px;
-        bottom: auto; /* Solta o fundo */
-        top: 20%;     /* Empurra o painel para o meio/topo da tela */
+        bottom: auto;
+        top: 20%;
     }
-}
+    
+    .banner-central h1 {
+        font-size: 1.5rem;
+    }
+    
+    .textos-banner p {
+        font-size: 0.9rem;
+    }
+    
+    .titulo-jogos h2 {
+        font-size: 1.5rem;
+    }
+    
+    .grid-memoria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .btn-campo {
+        padding: 1.5rem 2rem;
+        font-size: 1.2rem;
+    }
+    
+    .secao-final-impacto h2 {
+        font-size: 2rem;
+    }
+    
+    .img-final {
+        height: 250px;
     }
 }
