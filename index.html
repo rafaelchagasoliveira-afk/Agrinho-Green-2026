@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Green26</title>
-    <link rel="stylesheet" href="style.css?v=34">
+    <link rel="stylesheet" href="style.css?v=35">
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 
@@ -14,9 +14,10 @@
     <header>
         <button id="botao-dark" class="ler">🌙 Modo Escuro</button>
         <nav>
-            <a href="#" class="ler">Início</a>
+            <a href="#banner-central" class="ler">Início</a>
             <a href="Green26_AgrInho.pdf" target="_blank" class="ler">Sobre</a>
             <a href="#" id="link-acessibilidade" class="ler">Acessibilidade</a>
+            <a href="#" id="link-jogos" class="ler">Jogos</a>
         </nav>
     </header>
 
@@ -38,7 +39,7 @@
             </div>
         </section>
 
-        <section class="banner-central">
+        <section id="banner-central" class="banner-central">
             <div class="textos-banner">
                 <h1 class="ler">Conectando Campo e Tecnologia</h1>
                 <p class="ler">Um projeto sobre sustentabilidade, inovação e equilíbrio entre produção e meio ambiente.</p>
@@ -120,6 +121,73 @@
                 <h2 class="ler">🌱 Cultivando um Futuro Sustentável</h2>
                 <p class="ler">Tecnologia, sustentabilidade e consciência ambiental caminham juntas. Conectar campo e meio ambiente é cultivar um futuro melhor para o Paraná, para o Brasil e para o mundo inteiro.</p>
                 <div class="espaco-imagem"><img src="assets/futuro_sustentavel.jpg" alt="Futuro sustentável" class="img-conteudo"></div>
+            </div>
+        </section>
+
+        <!-- ===== SEÇÃO DE JOGOS ===== -->
+        <section id="secao-jogos" class="secao-jogos">
+            <div class="titulo-jogos">
+                <h2 class="ler">🎮 Aprenda Jogando!</h2>
+                <p class="ler">Divirta-se com jogos educativos sobre sustentabilidade e agro</p>
+            </div>
+
+            <div class="grid-jogos">
+                <!-- CARD 1: QUIZ AGRINHO -->
+                <div class="card-jogo">
+                    <div class="icone-jogo">📚</div>
+                    <h3 class="ler">Quiz Agrinho Rápido</h3>
+                    <p class="ler">Teste seu conhecimento com 5 perguntas sobre sustentabilidade!</p>
+                    <div class="info-jogo">
+                        <span class="ler">⏱️ 2 minutos</span>
+                        <span class="ler">⭐ Pontos: <strong id="score-quiz">0</strong></span>
+                    </div>
+                    <button id="btn-iniciar-quiz" class="btn-jogo ler">Começar Quiz</button>
+                    <div id="container-quiz" class="container-jogo-conteudo"></div>
+                </div>
+
+                <!-- CARD 2: MEMÓRIA SUSTENTÁVEL -->
+                <div class="card-jogo">
+                    <div class="icone-jogo">🎯</div>
+                    <h3 class="ler">Memória Sustentável</h3>
+                    <p class="ler">Encontre os pares de cartas com símbolos do agro!</p>
+                    <div class="info-jogo">
+                        <span class="ler">⏱️ Sem limite</span>
+                        <span class="ler">⭐ Pontos: <strong id="score-memoria">0</strong></span>
+                    </div>
+                    <button id="btn-iniciar-memoria" class="btn-jogo ler">Começar Jogo</button>
+                    <div id="container-memoria" class="container-jogo-conteudo"></div>
+                </div>
+
+                <!-- CARD 3: CLICKER DA PRODUÇÃO -->
+                <div class="card-jogo">
+                    <div class="icone-jogo">🌾</div>
+                    <h3 class="ler">Clicker da Produção</h3>
+                    <p class="ler">Clique no campo o máximo que conseguir em 60 segundos!</p>
+                    <div class="info-jogo">
+                        <span class="ler">⏱️ 60 segundos</span>
+                        <span class="ler">⭐ Pontos: <strong id="score-clicker">0</strong></span>
+                    </div>
+                    <button id="btn-iniciar-clicker" class="btn-jogo ler">Começar Jogo</button>
+                    <div id="container-clicker" class="container-jogo-conteudo"></div>
+                </div>
+            </div>
+
+            <div class="ranking-jogos">
+                <h3 class="ler">🏆 Seus Melhores Scores</h3>
+                <div class="tabela-ranking">
+                    <div class="linha-ranking">
+                        <span class="ler">Quiz Agrinho:</span>
+                        <strong class="ler" id="ranking-quiz">0 pontos</strong>
+                    </div>
+                    <div class="linha-ranking">
+                        <span class="ler">Memória:</span>
+                        <strong class="ler" id="ranking-memoria">0 pontos</strong>
+                    </div>
+                    <div class="linha-ranking">
+                        <span class="ler">Clicker:</span>
+                        <strong class="ler" id="ranking-clicker">0 pontos</strong>
+                    </div>
+                </div>
             </div>
         </section>
 
