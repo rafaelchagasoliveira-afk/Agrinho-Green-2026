@@ -112,7 +112,7 @@ Através de conteúdo educativo, jogos interativos e dados reais, o Green26 demo
 
 ## 👨‍💻 Desenvolvido por
 **Rafael das Chagas de Oliveira** 
-Colegio Estadual do Campo Jose Alves dos Santos - RBI
+do Colegio Estadual do Campo Jose Alves dos Santos - RBI para o
 Concurso Agrinho 2026 | Paraná, Brasil
 
 ---
