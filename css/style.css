@@ -84,7 +84,8 @@ header button:hover {
     align-items: center;
     text-align: center;
     height: calc(100vh - 74px); 
-    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('assets/agro.jpg');
+    /* CORRIGIDO: Adicionado o ../ antes de assets */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('../assets/agro.jpg');
     background-size: cover;
     background-position: center;
 }
